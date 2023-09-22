@@ -47,6 +47,9 @@
 #             we do not compute Sjh. 
 ########################################################################################
 
+# For each run of run.jl script, the corresponding data/ are beibg stored into the data
+# folder. 
+
 using Pkg, LinearAlgebra, Printf, SparseArrays, 
 MatrixMarket, Distributions, DelimitedFiles, FileIO, JLD2
 
@@ -111,6 +114,9 @@ function ComputeAndStore(m::Int,n::Int, s_max::Number, num_cl::Int, k::AbstractA
     
     # save the results as Julia's variables
     # and M for python plotting
+    if !isdir("data/")
+        mkdir("data/");
+    end
     cd("data/");
     # calculate the avererage increase for single and half precision
     r  = k[end];

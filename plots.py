@@ -5,24 +5,43 @@ import os
 from matplotlib import pyplot as plt
 
 # this python script creates plots (and store them as .pdfs).
-# you need to give manually, the name, which is the string
-# returned in ComputeAndStore() function, the exponent (10 base)
-# of the largest singular value s_max, and the 
-# exponent (10 base) of the smallest singular value s_min.
-# Finally, you need to spesify the string prec; If prec == "single",
-# we store a .pdf figure for the computed singular values in single 
-# separately (among with the fixed singular values and computed in double).
-# If prec == "half", we store a .pdf figure for the computed singular values in half,
-# (among with the fixed singular values and computed in double). Nevertheless,
-# we always store a .pdf showing the computed singular values for each precision,
-# and for the fixed ones. The corresponding figures are being stores into
-# the /figures folder.
+# you need to give manually.
 
-def print_sigmas(name,s_max,s_min,prec):
+# Input parameters
+########################################################################################
+# name: the string
+#       returned in ComputeAndStore() function
+
+# s_max: the exponent (10 base)
+#        of the largest singular value
+
+# s_min: the exponent (10 base)
+#        of the smallest singular value
+
+# n: The nummber of the singular values.
+
+# prec: A string that describes 
+#       the precision for which you want 
+#       separate plot. Accepted values,
+#       "single" and "half".
+########################################################################################
+
+# Output 
+########################################################################################
+# Two pdf files, one that shows the 
+# computed singular values for each case,
+# and one for the separate plot.
+# Those plots are being stores into the /figures folder.
+########################################################################################
+
+
+def print_sigmas(name,s_max,s_min,n,prec):
     #os.chdir("data")
     M = io.mmread("data\M_"+name+".mtx")
     M = sparse.coo_matrix.toarray(M)
-    x = np.arange(256)+1
+    x = np.arange(n)+1
+    if not os.path.isdir('figures/'):
+        os.mkdir('figures/')
     os.chdir("figures")
     # print for all the precisions
     fig2, ax = plt.subplots(1,3)
@@ -112,5 +131,5 @@ def print_sigmas(name,s_max,s_min,prec):
 
 
 # you need to manually tune this parameter
-print_sigmas("2_228_28_2_2_2_2_-4",2,-4,"half")
+print_sigmas("2_228_28_2_2_2_2_-4",2,-4,256,"half")
 
