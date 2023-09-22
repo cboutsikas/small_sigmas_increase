@@ -1,2 +1,10 @@
 # small_sigmas_increase
-This repository contains the codes for reproducing the results of the  paper [Small singular values can increase in lower precision](https://arxiv.org/abs/2303.03547) .
+### Repository Description:
+his repository contains the code for reproducing the results presented in the paper titled  [Small singular values can increase in lower precision](https://arxiv.org/abs/2303.03547) .The purpose of this code is to generate matrices $'A \in \real^{m \times n}\'$ with fixed singular values $'\Sigma'$ and subsequently compute the singular values in double, single, and half precision.
+
+### Installation Requirements:
+- Ensure you have Julia installed for performing major computations.
+- Python is required for generating plots.
+- If you're using Visual Studio Code, setting up a Python virtual environment is recommended. For instructions, please visit [this link](https://code.visualstudio.com/docs/python/python-tutorial).
+
+Before running the code, please review the description and examples provided at the beginning of the **run.jl** script. To reproduce the examples from the paper, you can use the **run_fixed_cases.jl** script.
