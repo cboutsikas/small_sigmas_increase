@@ -1,6 +1,6 @@
 # small_sigmas_increase
 ### Repository Description:
-his repository contains the code for reproducing the results presented in the paper titled  [Small singular values can increase in lower precision](https://arxiv.org/abs/2303.03547) .The purpose of this code is to generate matrices $`A \in \mathbb{R}^{m \times n}\`$ with fixed singular values $\Sigma$ and subsequently compute the singular values in double, single, and half precision.
+his repository contains the code for reproducing the results presented in the paper titled  [Small singular values can increase in lower precision](https://arxiv.org/abs/2303.03547) .The purpose of this code is to generate matrices $A \in \mathbb{R}^{m \times n}\$ with fixed singular values $\Sigma$ and subsequently compute the singular values in double, single, and half precision.
 
 ### Installation Requirements:
 - Ensure you have Julia installed for performing major computations.
